@@ -38,7 +38,7 @@ function handlePage(pageClass, elLink) {
 
     removeDisplayPrev();
     elLink.classList.add('active');
-    
+
     let page = $(`.${pageClass}`);
     page.removeClass('d-none');
 }
@@ -68,3 +68,11 @@ function selectImg(id) {
 function getCurrImg() {
     return gCurrImg;
 }
+//change step
+function nextPage(next, id) {
+    let elLink = document.querySelector(`#${id}`);
+
+    handlePage(next, elLink);
+}
+
+
