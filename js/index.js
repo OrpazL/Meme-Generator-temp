@@ -37,7 +37,7 @@ function handlePage(pageClass, elLink) {
 
     removeDisplayPrev();
     elLink.classList.add('active');
-    
+
     let page = $(`.${pageClass}`);
     page.removeClass('d-none');
 }
@@ -57,6 +57,8 @@ function removeDisplayPrev() {
 function selectImg(id) {
     if(currImg) {
         $('#' + currImg.id).removeClass("selected");
+
+        if (currImg.id === id) return;
     }
 
     currImg = images.find(image => image.id === id); 
@@ -64,5 +66,11 @@ function selectImg(id) {
     $('#' + id).addClass('selected');
 }
 
+//change step
+function nextPage(next, id) {
+    let elLink = document.querySelector(`#${id}`);
+
+    handlePage(next, elLink);
+}
 
 

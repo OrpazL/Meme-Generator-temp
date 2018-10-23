@@ -127,11 +127,37 @@ footer {
 
 .selected {
     /* transform: scale(1.1) translateY(2px); */
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, .3);
+    box-shadow: 0 2rem 4rem #0000004d;
     filter: brightness(125%);
+    position: relative;
 }
 
 .selected .card-img {
     outline: 3px solid rgb(0, 243, 0);
 }
 
+/* btn style */
+.btn-next {
+    transition: all .15s; 
+}
+.btn-next:visited, .btn-next:link {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block; 
+}
+.btn-next:hover, .btn-next:active, .btn-next:focus{
+    color: rgb(163, 0, 192);
+    outline: 0;
+    font-weight: 600;
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+    transform: scale(1.1) translateY(-2px); 
+}
+
+/* icon */
+.v__icon {
+    fill: black;
+    width: 2.25rem;
+    height: 2.25rem;
+    z-index: 2;
+}

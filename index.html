@@ -38,13 +38,13 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#" onclick="handlePage('select-img' , this)">Select Background</a>
+                    <a id="img" class="nav-link active" href="#" onclick="handlePage('select-img' , this)">Select Background</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="handlePage('select-template' , this)">Select template</a>
+                    <a id="template" class="nav-link" href="#" onclick="handlePage('select-template' , this)">create meme</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" onclick="handlePage('select-generator' , this)">create meme</a>
+                    <a id="generator" class="nav-link disabled" href="#" onclick="handlePage('select-generator' , this)">save & share</a>
                 </li>
             </ul>
         </div>
@@ -62,12 +62,12 @@
                 <div class="container">
                     <div class="album__row row"></div>
                 </div>
-                <!-- <p class="float-right">
-                    <a href="#" class="scrollToTop contect__link">Back to top</a>
-                </p> -->
+                <p class="float-right">
+                    <a href="#" class="scrollToTop btn-next">Back to top</a>
+                </p>
             </div>
 
-            <a href="#" class="btn btn-primary">next step &rightarrow;</a>
+            <a href="#" class="btn btn-next scrollToTop" onclick="nextPage('select-template', 'template')">next step &rightarrow;</a>
         </div>
 
         <div class="card-body select-template d-none">
