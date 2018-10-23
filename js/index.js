@@ -57,7 +57,6 @@ function removeDisplayPrev() {
 function selectImg(id) {
     let img = images.find(image => image.id === id);
     let card = $('.album__row').find(`[data-id='${id}']`);
-    debugger
 }
 
 

@@ -50,6 +50,20 @@ body {
     object-fit: cover;
 }
 
+.lang {
+    width: 10px;
+    height: 10px;
+}
+
+.lang-he {
+    background-image: url(../img/langs/he-il.png);
+
+}
+
+.lang-en {
+    background-image: url(../img/langs/en-us.png);
+}
+
 .title {
     margin: 0 auto;
     font-size: 5rem;
