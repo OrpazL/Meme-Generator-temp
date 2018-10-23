@@ -30,7 +30,7 @@ var gCurrImg = gImages[0];
 
 function init() {
     createList(gImages);
-    renderCanvas();
+    // renderCanvas();
 }
 
 function handlePage(pageClass, elLink) {
@@ -41,6 +41,8 @@ function handlePage(pageClass, elLink) {
 
     let page = $(`.${pageClass}`);
     page.removeClass('d-none');
+
+    renderCanvas();
 }
 
 function removeDisplayPrev() {
