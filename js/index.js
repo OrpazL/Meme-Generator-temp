@@ -1,30 +1,30 @@
 var gNextId = 1;
 var images = [
-    {id: gNextId++, url: 'img/meme-imgs/1.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/2.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/3.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/4.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/5.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/6.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/7.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/8.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/9.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/10.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/11.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/12.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/13.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/14.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/15.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/16.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/17.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/18.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/19.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/20.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/21.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/22.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/23.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/24.jpg', keywords: ['happy']},
-    {id: gNextId++, url: 'img/meme-imgs/25.jpg', keywords: ['happy']}
+    {id: gNextId++, url: './img/meme-imgs/1.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/2.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/3.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/4.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/5.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/6.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/7.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/8.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/9.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/10.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/11.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/12.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/13.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/14.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/15.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/16.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/17.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/18.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/19.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/20.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/21.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/22.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/23.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/24.jpg', keywords: ['happy']},
+    {id: gNextId++, url: './img/meme-imgs/25.jpg', keywords: ['happy']}
 ];
 var currImg;
 
@@ -56,7 +56,13 @@ function removeDisplayPrev() {
 //select image
 function selectImg(id) {
     let img = images.find(image => image.id === id);
+<<<<<<< HEAD
     let card = $('.album__row').find(`[data-id='${id}']`);
+=======
+    let card = $('#' + id);
+    
+    
+>>>>>>> d39411f23cf788a5828cb8aee08274cb36dcffce
 }
 
 
