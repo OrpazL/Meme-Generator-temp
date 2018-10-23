@@ -10,7 +10,7 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
+<body onload="init()">
     <!-- <div class="backgroand-image"></div> -->
     <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
@@ -22,65 +22,79 @@
     <header class="header">
         <!-- Image and text -->
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">
-                Bootstrap
+            <a class="navbar-brand d-flex" href="index.html">
+                <img src="img/9gag-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <span class="logo-text">Meme Generator</span>
             </a>    
         </nav>
 
         <div class="header__title">
-            <h1>Meme Generator</h1>
+            <h1 class="title">Meme Generator</h1>
         </div>
     </header>
     <div class="card text-center container">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
+                    <a class="nav-link active" href="#" onclick="handlePage('select-img' , this)">Select Base Image</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#" onclick="handlePage('select-template' , this)">Link</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link disabled" href="#" onclick="handlePage('select-generator' , this)">Disabled</a>
                 </li>
             </ul>
         </div>
         <div class="card-body select-img">
                 <nav class="navbar navbar-expand-lg navbar-light ">
-                    <a class="navbar-brand" href="#">Navbar</a>
-
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search by key word" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
 
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">step one</h5>
+            <p class="card-text">select your image</p>
+            <div class="album py-5 ">
+                <div class="container">
+                    <div class="album__row row"></div>
+                </div>
+                <!-- <p class="float-right">
+                    <a href="#" class="scrollToTop contect__link">Back to top</a>
+                </p> -->
+            </div>
+
+            <a href="#" class="btn btn-primary">next step &rightarrow;</a>
         </div>
 
         <div class="card-body select-template d-none">
-            <h5 class="card-title">Special title treatment</h5>
+            <h5 class="card-title">template</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
 
         <div class="card-body select-generator d-none">
-            <h5 class="card-title">Special title treatment</h5>
+            <h5 class="card-title">generator</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="footer__logo"></div>
-        <p class="footer__contact">footer</p>
+        <!-- <div class="footer__logo"></div>
+        <p class="footer__contact">footer</p> -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Fluid jumbotron</h1>
+              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+          </div>
     </footer>
    
     <script src="lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="lib/bs/bootstrap.min.js"></script>
+    <script src="./js/services/dom-server.js"></script>
     <script src="js/index.js"></script>
 </body>
 
