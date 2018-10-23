@@ -39,7 +39,13 @@ function renderCanvas() {
 }
 
 function getElCurrImg() {
-    var currImgObj = getCurrImg();
+    var currImgObj = (getCurrImg() === undefined)? getBlankImg() : getCurrImg();
     var elImg = $(`img[src="${currImgObj.url}"]`);
     return elImg[0];
 }
+
+// function getElBlankImg() {
+//     var blankImgObj = getBlankImg();
+//     var elImg = $(`img[src="${blankImgObj.url}"]`);
+//     return elImg[0];
+// }

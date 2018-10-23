@@ -26,7 +26,7 @@ var gImages = [
     {id: gNextId++, url: './img/meme-imgs/24.jpg', keywords: ['happy']},
     {id: gNextId++, url: './img/meme-imgs/25.jpg', keywords: ['happy']}
 ];
-var gCurrImg = gImages[0];
+var gCurrImg;
 
 function init() {
     createList(gImages);
@@ -77,4 +77,7 @@ function nextPage(next, id) {
     handlePage(next, elLink);
 }
 
+function getBlankImg() {
+    return {id: 'blank', url: './img/blank300x300.jpg', keywords: ['blank']};
+}
 
