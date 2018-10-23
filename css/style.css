@@ -105,15 +105,19 @@ footer {
     cursor: pointer;
 }
 
-.col-lg-3:hover {
+.card-img:hover {
     transform: scale(1.1) translateY(2px);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, .3);
+    outline-offset: .5rem;
 }
 
 .selected {
     /* transform: scale(1.1) translateY(2px); */
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, .3);
-    filter: blur(2px) brightness(80%);
+    filter: brightness(125%);
 }
 
+.selected .card-img {
+    outline: 3px solid rgb(0, 243, 0);
+}
 

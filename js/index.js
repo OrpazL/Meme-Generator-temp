@@ -55,10 +55,13 @@ function removeDisplayPrev() {
 }
 //select image
 function selectImg(id) {
-    let img = images.find(image => image.id === id);
-    let card = $('#' + id);
+    if(currImg) {
+        $('#' + currImg.id).removeClass("selected");
+    }
+
+    currImg = images.find(image => image.id === id); 
     
-    
+    $('#' + id).addClass('selected');
 }
 
 
