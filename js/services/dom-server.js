@@ -15,13 +15,14 @@ function createList(images) {
     });
 }
 
-//scroll up
-//Check to see if the window is top if not then display button
+// show side-bar
 $(window).scroll(function(){
     if ($(this).scrollTop() > 100) {
-        $('.scrollToTop').fadeIn();
+        // $('.scrollToTop').fadeIn();
+        $("#side-nav").addClass("navbar-left");
     } else {
-        $('.scrollToTop').fadeOut();
+        // $('.scrollToTop').fadeOut();
+        $("#side-nav").removeClass("navbar-left");
     }
 });
 

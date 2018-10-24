@@ -161,3 +161,10 @@ footer {
     height: 2.25rem;
     z-index: 2;
 }
+/* nav-bar left */
+.navbar-left {
+    position: fixed;
+    top: 174px;
+    left: -168px;
+    transform: rotate(90deg);
+}
