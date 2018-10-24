@@ -1,0 +1,22 @@
+.canvas-settings{
+    justify-content: center;
+    align-items: center;
+
+}
+
+.canvas-container {
+    justify-content: space-around;
+}
+
+/* .canvas {
+    max-width: 400px;
+} */
+
+.title-color {
+    width: 100%;
+    padding: 0;
+}
+
+.canvas {
+    outline: 1px solid black;
+}

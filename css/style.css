@@ -1,4 +1,5 @@
 @import './fonts/fonts.css';
+@import './canvas.css';
 
 html, body {
     padding: 0;

@@ -1,5 +1,5 @@
 var gNextId = 1;
-var images = [
+var gImages = [
     {id: gNextId++, url: './img/meme-imgs/1.jpg', keywords: ['happy']},
     {id: gNextId++, url: './img/meme-imgs/2.jpg', keywords: ['happy']},
     {id: gNextId++, url: './img/meme-imgs/3.jpg', keywords: ['happy']},
@@ -26,10 +26,11 @@ var images = [
     {id: gNextId++, url: './img/meme-imgs/24.jpg', keywords: ['happy']},
     {id: gNextId++, url: './img/meme-imgs/25.jpg', keywords: ['happy']}
 ];
-var currImg;
+var gCurrImg;
 
 function init() {
-    createList(images);
+    createList(gImages);
+    // renderCanvas();
 }
 
 function handlePage(pageClass, elLink) {
@@ -40,6 +41,8 @@ function handlePage(pageClass, elLink) {
 
     let page = $(`.${pageClass}`);
     page.removeClass('d-none');
+
+    renderCanvas();
 }
 
 function removeDisplayPrev() {
@@ -55,17 +58,18 @@ function removeDisplayPrev() {
 }
 //select image
 function selectImg(id) {
-    if(currImg) {
-        $('#' + currImg.id).removeClass("selected");
-
-        if (currImg.id === id) return;
+    if(gCurrImg) {
+        $('#' + gCurrImg.id).removeClass("selected");
     }
 
-    currImg = images.find(image => image.id === id); 
+    gCurrImg = gImages.find(image => image.id === id); 
     
     $('#' + id).addClass('selected');
 }
 
+function getCurrImg() {
+    return gCurrImg;
+}
 //change step
 function nextPage(next, id) {
     let elLink = document.querySelector(`#${id}`);
@@ -73,4 +77,7 @@ function nextPage(next, id) {
     handlePage(next, elLink);
 }
 
+function getBlankImg() {
+    return {id: 'blank', url: './img/blank300x300.jpg', keywords: ['blank']};
+}
 
