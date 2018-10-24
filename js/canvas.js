@@ -62,7 +62,7 @@ function onAddTextBox(elCanvas , ev) {
     // renderTextBox(textBoxPos.x , textBoxPos.y);
     gCtx.fillStyle = 'black';
     // gCtx.fillText($(`.text-box-${textBoxPos.x}-${textBoxPos.y}`).val(), textBoxPos.x , textBoxPos.y);
-    gCtx.fillText(document.querySelector('.text-box').value, textBoxPos.x - elCanvas.offsetLeft, textBoxPos.y - elCanvas.offsetTop);
+    gCtx.fillText(document.querySelector('.text-box').value, getMousePos(elCanvas,ev).x, getMousePos(elCanvas,ev).y);
 
 
 }
@@ -76,6 +76,21 @@ function renderTextBox(x , y) {
 
 }
 
-// function getCanvasOffsetTop(element) {
-//     if (element)
-// }
+function getCanvasOffsetTop(element , top) {
+    if (element === document.body) return top;
+    top += element.offsetTop ;
+    return getCanvasOffsetTop(element.parentElement , top);
+}
+function getCanvasOffsetLeft(element , left) {
+    if (element === document.body) return left;
+    left -= element.offsetLeft ;
+    return getCanvasOffsetLeft(element.parentElement , left);
+}
+
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
