@@ -25,3 +25,10 @@
     z-index: 3;
     outline: 1px dashed red;
 }
+
+#floatTextBox:focus {
+    outline: 0;
+}
+#floatTextBox {
+    text-align: center;
+}
