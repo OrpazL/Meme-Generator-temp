@@ -55,7 +55,7 @@ function getElCurrImg() {
 function onAddTextBox(elCanvas , ev) {
     gCtx.fillStyle = 'black';
     gCtx.fillText(document.querySelector('.text-box').value, getMousePos(elCanvas,ev).x, getMousePos(elCanvas,ev).y);
-    clickForTextBox();
+    clickForTextBox(ev);
 }
 
 function renderTextBox(x , y) {
@@ -67,27 +67,59 @@ function renderTextBox(x , y) {
 
 }
 
-function getMousePos(canvas, evt) {
+function getMousePos(canvas, ev) {
     var rect = canvas.getBoundingClientRect();
     return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top
+      x: ev.clientX - rect.left,
+      y: ev.clientY - rect.top
     };
 }
 
+var gCurrTextBoxPos;
 
-function clickForTextBox() {
+function clickForTextBox(ev) {
     var canvas = gCanvas;
     var ctx = gCtx;
 
     var coverDiv = document.createElement('div');
     coverDiv.setAttribute('id', 'canvas-cover');
-    coverDiv.style.width = canvas.width +'px';
-    coverDiv.style.height = canvas.height +'px';
+    coverDiv.style.width = canvas.width + 'px';
+    coverDiv.style.height = canvas.height + 'px';
     coverDiv.style.position = 'absolute';
     coverDiv.style.top = 0;
     // coverDiv.style['z-index'] = 1;
-    coverDiv.style['background-color'] = 'gray';
+    // coverDiv.style['background-color'] = 'gray';
+
+    var inputTextBox = document.createElement('input');
+    inputTextBox.setAttribute('id', 'floatTextBox')
+    inputTextBox.onblur = unCoverCanvas;
+    console.log('inputtextbox', inputTextBox)
+    
+    inputTextBox.style['background-color'] = 'transparent';
+    inputTextBox.style.border = '1px dashed #d4d1d1';
+    inputTextBox.style.position = 'absolute';
+    inputTextBox.style.top = (getMousePos(canvas,ev).y - 16.5) + 'px';
+    inputTextBox.style.left = (getMousePos(canvas,ev).x - 89) + 'px';
+    inputTextBox.setAttribute('autofocus' ,'');
+    gCurrTextBoxPos = {
+        x: getMousePos(canvas,ev).x,
+        y: getMousePos(canvas,ev).y,
+    };
+
     $('.on-canvas').append(coverDiv);
+    $('#canvas-cover').append(inputTextBox);
     console.log($('#canvas-cover')[0]);
 }
+
+function unCoverCanvas() {
+    var textBox = document.querySelector('#floatTextBox');
+    var ctx = gCtx;
+    ctx.fillText(textBox.value , gCurrTextBoxPos.x , gCurrTextBoxPos.y);
+
+    var canvasCover = document.querySelector('#canvas-cover')
+    // document.querySelector('#canvas-cover').removeChild(textBox);
+    document.querySelector('.on-canvas').removeChild(canvasCover);
+    console.log('unfocused');
+
+}
+
