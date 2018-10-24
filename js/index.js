@@ -32,6 +32,7 @@ var gCurrFont = 'sans-serif';
 var gCurrFontSize = 16;
 var gCurrColor = 'black';
 
+
 function init() {
     createList(gImages);
     // renderCanvas();
@@ -146,4 +147,18 @@ function setBlur() {
 
 function removeBlur() {
     $('.controllers-panel>*:not(.canvas-style)').removeClass('blur-background');
+}
+
+
+
+function getCurrColor() {
+    return gCurrColor;
+}
+
+function getCurrFontSize() {
+    return gCurrFontSize;
+}
+
+function getCurrFont() {
+    return gCurrFont;
 }

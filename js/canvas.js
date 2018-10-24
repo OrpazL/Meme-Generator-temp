@@ -53,19 +53,19 @@ function getElCurrImg() {
 // }
 
 function onAddTextBox(elCanvas , ev) {
-    gCtx.fillStyle = 'black';
-    gCtx.fillText(document.querySelector('.text-box').value, getMousePos(elCanvas,ev).x, getMousePos(elCanvas,ev).y);
+    // gCtx.fillStyle = 'black';
+    // gCtx.fillText(document.querySelector('.text-box').value, getMousePos(elCanvas,ev).x, getMousePos(elCanvas,ev).y);
     clickForTextBox(ev);
 }
 
-function renderTextBox(x , y) {
-    // var elTxtBox = `<input type="text" class="text-box text-box-${x}-${y}"/>`;
-    // document.querySelector('.text-box-container').innerHtml += elTxtBox;
-    // console.log('rendered text box ', elTxtBox);
+// function renderTextBox(x , y) {
+//     // var elTxtBox = `<input type="text" class="text-box text-box-${x}-${y}"/>`;
+//     // document.querySelector('.text-box-container').innerHtml += elTxtBox;
+//     // console.log('rendered text box ', elTxtBox);
 
-    var elTxtBox = document.querySelector('.text-box');
+//     var elTxtBox = document.querySelector('.text-box');
 
-}
+// }
 
 function getMousePos(canvas, ev) {
     var rect = canvas.getBoundingClientRect();
@@ -79,7 +79,7 @@ var gCurrTextBoxPos;
 
 function clickForTextBox(ev) {
     var canvas = gCanvas;
-    var ctx = gCtx;
+    // var ctx = gCtx;
 
     var coverDiv = document.createElement('div');
     coverDiv.setAttribute('id', 'canvas-cover');
@@ -113,13 +113,23 @@ function clickForTextBox(ev) {
 
 function unCoverCanvas() {
     var textBox = document.querySelector('#floatTextBox');
-    var ctx = gCtx;
-    ctx.fillText(textBox.value , gCurrTextBoxPos.x , gCurrTextBoxPos.y);
+    printTextOnCanvas(textBox.value , gCurrTextBoxPos.x , gCurrTextBoxPos.y);
 
-    var canvasCover = document.querySelector('#canvas-cover')
+    var canvasCover = document.querySelector('#canvas-cover');
     // document.querySelector('#canvas-cover').removeChild(textBox);
     document.querySelector('.on-canvas').removeChild(canvasCover);
     console.log('unfocused');
 
+}
+
+function printTextOnCanvas(txt , x ,y) {
+    var ctx = gCtx;
+    var currColor = getCurrColor();
+    var currFont = getCurrFont();
+    var currFontSize = getCurrFontSize();
+
+    ctx.fillStyle = currColor;
+    ctx.font = `${currFontSize}px ${currFont}`;
+    ctx.fillText(txt , x ,y);
 }
 
