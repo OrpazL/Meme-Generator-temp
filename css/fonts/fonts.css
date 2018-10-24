@@ -7,3 +7,23 @@
     font-family: white-on-black;
     src: url(white-on-black/white-on-black.ttf);
 }
+
+@font-face {
+    font-family: Chunkfive;
+    src: url(fontsToText/Chunkfive.otf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fontsToText/roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(fontsToText/leto/Lato-Medium.ttf);
+}
+
+@font-face {
+    font-family: LeagueGothic;
+    src: url(fontsToText/LeagueGothic-Regular.otf);
+}

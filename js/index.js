@@ -26,7 +26,11 @@ var gImages = [
     {id: gNextId++, url: './img/meme-imgs/24.jpg', keywords: ['happy']},
     {id: gNextId++, url: './img/meme-imgs/25.jpg', keywords: ['happy']}
 ];
+
 var gCurrImg;
+var gCurrFont = 'sans-serif';
+var gCurrFontSize = 16;
+var gCurrColor = 'black';
 
 function init() {
     createList(gImages);
@@ -58,17 +62,17 @@ function removeDisplayPrev() {
 }
 //select image
 function selectImg(id) {
-    if(gCurrImg) {
+    if (gCurrImg) {
         $('#' + gCurrImg.id).removeClass("selected");
 
-        if(id === gCurrImg.id) {
+        if (id === gCurrImg.id) {
             gCurrImg = undefined;
             return;
         }
     }
 
-    gCurrImg = gImages.find(image => image.id === id); 
-    
+    gCurrImg = gImages.find(image => image.id === id);
+
     $('#' + id).addClass('selected');
 }
 
@@ -83,6 +87,63 @@ function nextPage(next, id) {
 }
 
 function getBlankImg() {
-    return {id: 'blank', url: './img/blank300x300.jpg', keywords: ['blank']};
+    return {
+        id: 'blank',
+        url: './img/blank300x300.jpg',
+        keywords: ['blank']
+    };
 }
 
+function openFontNav(navName) {
+    $(navName).addClass('open-nav');
+    if(navName === '#color-picker') $('#colorWheel').fadeIn();
+}
+
+function closeNav(navName) {
+    $(navName).removeClass('open-nav');
+    if(navName === '#color-picker') $('#colorWheel').fadeOut();
+}
+
+function changeFont(font) {
+    $('.font-style .text').text($(font).text());
+
+    gCurrFont = $(font).text();
+    closeNav('.nav-background');
+    setPreview('font');
+}
+
+function changeFontSise(sign) {
+    if (( +$('.size-val').text() >= 30  && $(sign).hasClass('plus')) || (+$('.size-val').text() <=  10 && $(sign).hasClass('minus'))) return; 
+    $(sign).hasClass('plus') ? gCurrFontSize++ : gCurrFontSize--;
+
+    $('.size-val').text(gCurrFontSize);
+    setPreview('size');
+}
+
+function setPreview(prop) {
+    switch(prop) {
+        case 'font':
+            $('.text-preview').css("font-family", gCurrFont);
+            break; 
+        case 'size':
+            let size = gCurrFontSize / 10;
+            $('.text-preview').css("font-size", size + 'rem');
+            break;
+        case 'color':
+            $('.text-preview').css("color", gCurrColor);
+            break;
+    }
+}
+
+function changeColor(selectedColor) {
+    gCurrColor = $(selectedColor).attr('id');
+    setPreview('color');
+}
+
+function setBlur() {
+    $('.controllers-panel>*:not(.canvas-style)').addClass('blur-background');
+}
+
+function removeBlur() {
+    $('.controllers-panel>*:not(.canvas-style)').removeClass('blur-background');
+}
