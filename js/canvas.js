@@ -36,6 +36,8 @@ function renderCanvas() {
         400,
         elCurrImg.naturalHeight * (400 / elCurrImg.naturalWidth)
     );
+    gCanvas = elCanvas;
+    gCtx = ctx;
 }
 
 function getElCurrImg() {
@@ -48,4 +50,32 @@ function getElCurrImg() {
 //     var blankImgObj = getBlankImg();
 //     var elImg = $(`img[src="${blankImgObj.url}"]`);
 //     return elImg[0];
+// }
+
+function onAddTextBox(elCanvas , ev) {
+    var textBoxPos = {
+        x: ev.clientX,
+        y: ev.clientY,
+    };
+    console.log(textBoxPos);
+    // console.log(elCanvas.);
+    // renderTextBox(textBoxPos.x , textBoxPos.y);
+    gCtx.fillStyle = 'black';
+    // gCtx.fillText($(`.text-box-${textBoxPos.x}-${textBoxPos.y}`).val(), textBoxPos.x , textBoxPos.y);
+    gCtx.fillText(document.querySelector('.text-box').value, textBoxPos.x - elCanvas.offsetLeft, textBoxPos.y - elCanvas.offsetTop);
+
+
+}
+
+function renderTextBox(x , y) {
+    // var elTxtBox = `<input type="text" class="text-box text-box-${x}-${y}"/>`;
+    // document.querySelector('.text-box-container').innerHtml += elTxtBox;
+    // console.log('rendered text box ', elTxtBox);
+
+    var elTxtBox = document.querySelector('.text-box');
+
+}
+
+// function getCanvasOffsetTop(element) {
+//     if (element)
 // }

@@ -38,7 +38,8 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a id="img" class="nav-link active" href="#" onclick="handlePage('select-img' , this)">Select Background</a>
+                    <a id="img" class="nav-link active" href="#" onclick="handlePage('select-img' , this)">Select
+                        Background</a>
                 </li>
                 <li class="nav-item">
                     <a id="template" class="nav-link" href="#" onclick="handlePage('select-text' , this)">create meme</a>
@@ -47,7 +48,8 @@
                     <a class="nav-link" href="#" onclick="handlePage('select-template' , this)">Select template</a>
                 </li> -->
                 <li class="nav-item">
-                    <a id="generator" class="nav-link disabled" href="#" onclick="handlePage('select-generator' , this)">save & share</a>
+                    <a id="generator" class="nav-link disabled" href="#" onclick="handlePage('select-generator' , this)">save
+                        & share</a>
                 </li>
             </ul>
         </div>
@@ -70,15 +72,17 @@
                 </p>
             </div>
 
-            <a href="#" class="btn btn-next scrollToTop" onclick="nextPage('select-text', 'template')">next step &rightarrow;</a>
+            <a href="#" class="btn btn-next scrollToTop" onclick="nextPage('select-text', 'template')">next step
+                &rightarrow;</a>
         </div>
 
+        <!-- CANVAS CREATION -->
         <div class="card-body select-text d-none">
             <h5 class="card-title">text</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <div class="canvas-container container d-flex">
 
-                <canvas class="canvas">
+                <canvas class="canvas" onclick="onAddTextBox(this , event)">
 
                 </canvas>
 
@@ -96,6 +100,9 @@
                         </label>
                     </div>
                     <input type="color" class="title-color" value="#ffffff" onchange="renderCanvas()">
+                    <div class="text-box-container">
+                        <input type="text" class="text-box" />
+                    </div>
 
                 </div>
 
