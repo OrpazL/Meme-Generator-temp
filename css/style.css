@@ -91,10 +91,6 @@ body {
     max-height: 80px;
 }
 
-footer {
-    /* bottom:0; */
-}
-
 /* disabled btn */
 .disabled {
     cursor: default;

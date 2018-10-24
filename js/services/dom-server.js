@@ -17,7 +17,7 @@ function createList(images) {
 
 // show side-bar
 $(window).scroll(function(){
-    if ($(this).scrollTop() > 100) {
+    if ($(this).scrollTop() > 100 && $("#img").hasClass("active")) {
         // $('.scrollToTop').fadeIn();
         $("#side-nav").addClass("navbar-left");
     } else {

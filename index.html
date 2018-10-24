@@ -77,32 +77,31 @@
 
         <!-- CANVAS CREATION -->
         <div class="card-body select-text d-none">
-            <h5 class="card-title">text</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">customize your meme</h5>
             <div class="canvas-container container d-flex">
-
-                <canvas class="canvas" onclick="onAddTextBox(this , event)">
-
-                </canvas>
-
-                <div class="canvas-settings d-flex flex-column">
-                    <div>
-                        <label for="top-title">
-                            Solid top title:
-                            <input type="checkbox" name="top-title" class="top-title" onchange="renderCanvas()">
-                        </label>
-                    </div>
-                    <div>
-                        <label for="bottom-title">
-                            Solid bottom title:
-                            <input type="checkbox" name="bottom-title" class="bottom-title" onchange="renderCanvas()">
-                        </label>
-                    </div>
-                    <input type="color" class="title-color" value="#ffffff" onchange="renderCanvas()">
-                    <div class="text-box-container">
-                        <input type="text" class="text-box" />
+                <div class="row">
+                    <div class="col">
+                        <canvas class="canvas" onclick="onAddTextBox(this , event)"></canvas>
                     </div>
 
+                    <div class="col canvas-settings d-flex flex-column">
+                      <div>
+                            <label for="top-title">
+                                Solid top title:
+                                <input type="checkbox" name="top-title" class="top-title" onchange="renderCanvas()">
+                            </label>
+                            </div>
+                            <div>
+                                <label for="bottom-title">
+                                    Solid bottom title:
+                                    <input type="checkbox" name="bottom-title" class="bottom-title" onchange="renderCanvas()">
+                                </label>
+                            </div>
+                            <input type="color" class="title-color" value="#ffffff" onchange="renderCanvas()">
+                            <div class="text-box-container">
+                                <input type="text" class="text-box" />
+                        </div>
+                    </div>
                 </div>
 
             </div>
