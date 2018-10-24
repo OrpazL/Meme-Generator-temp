@@ -53,18 +53,9 @@ function getElCurrImg() {
 // }
 
 function onAddTextBox(elCanvas , ev) {
-    var textBoxPos = {
-        x: ev.clientX,
-        y: ev.clientY,
-    };
-    console.log(textBoxPos);
-    // console.log(elCanvas.);
-    // renderTextBox(textBoxPos.x , textBoxPos.y);
     gCtx.fillStyle = 'black';
-    // gCtx.fillText($(`.text-box-${textBoxPos.x}-${textBoxPos.y}`).val(), textBoxPos.x , textBoxPos.y);
     gCtx.fillText(document.querySelector('.text-box').value, getMousePos(elCanvas,ev).x, getMousePos(elCanvas,ev).y);
-
-
+    clickForTextBox();
 }
 
 function renderTextBox(x , y) {
@@ -76,21 +67,27 @@ function renderTextBox(x , y) {
 
 }
 
-function getCanvasOffsetTop(element , top) {
-    if (element === document.body) return top;
-    top += element.offsetTop ;
-    return getCanvasOffsetTop(element.parentElement , top);
-}
-function getCanvasOffsetLeft(element , left) {
-    if (element === document.body) return left;
-    left -= element.offsetLeft ;
-    return getCanvasOffsetLeft(element.parentElement , left);
-}
-
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
       x: evt.clientX - rect.left,
       y: evt.clientY - rect.top
     };
+}
+
+
+function clickForTextBox() {
+    var canvas = gCanvas;
+    var ctx = gCtx;
+
+    var coverDiv = document.createElement('div');
+    coverDiv.setAttribute('id', 'canvas-cover');
+    coverDiv.style.width = canvas.width +'px';
+    coverDiv.style.height = canvas.height +'px';
+    coverDiv.style.position = 'absolute';
+    coverDiv.style.top = 0;
+    // coverDiv.style['z-index'] = 1;
+    coverDiv.style['background-color'] = 'gray';
+    $('.on-canvas').append(coverDiv);
+    console.log($('#canvas-cover')[0]);
 }
